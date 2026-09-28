@@ -1,0 +1,35 @@
+:root {
+  --carousel-delay: #{$carousel-delay};
+  --carousel-duration: #{$carousel-duration};
+  --motion-ease: #{$motion-ease};
+  --motion-duration: #{$motion-reveal};
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity $motion-reveal $motion-ease, transform $motion-reveal $motion-ease;
+  &.is-visible { opacity: 1; transform: translateY(0); }
+}
+@for $index from 2 through 6 {
+  .section-heading > .reveal:nth-child(#{$index}),
+  .testimonials__grid > .reveal:nth-child(#{$index}),
+  .our_work__grid > .reveal:nth-child(#{$index}),
+  .footer__grid > .reveal:nth-child(#{$index}) {
+    transition-delay: ($index - 1) * $motion-stagger;
+  }
+}
+.action, .header__nav a, .header__toggle, .footer a, .our_work__filters button {
+  transition: background-color $motion-hover ease, color $motion-hover ease, opacity $motion-hover ease, box-shadow $motion-hover ease;
+}
+.header__nav.is-open { animation: soft-enter $motion-hover $motion-ease; }
+.our_work__dialog[open] { animation: soft-enter $motion-reveal $motion-ease; }
+.our_work__dialog[open]::backdrop { animation: soft-fade $motion-hover ease; }
+@keyframes soft-enter { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes soft-fade { from { opacity: 0; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+@media print {
+  .reveal { opacity: 1; transform: none; }
+}

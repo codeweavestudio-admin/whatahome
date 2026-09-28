@@ -1,0 +1,14 @@
+.consultation_services {
+  &__viewport { overflow: hidden; touch-action: pan-y; border-radius: 16px; }
+  &__track { display: flex; gap: 40px; will-change: transform; }
+  &__card::before { transition: scale $motion-reveal $motion-ease; }
+  @media (hover: hover) { &__card:hover::before { scale: 1.025; } }
+  &__card { flex: 0 0 440px; min-height: 587px; position: relative; isolation: isolate; overflow: hidden; border-radius: 16px; display: flex; align-items: end; scroll-snap-align: start; background: $color-surface; }
+  &__card--ev { @include deferred-image-layer($image-service-ev, auto 111%, calc(50% + 40px) center); }
+  &__card--utility { @include deferred-image-layer($image-service-utility); }
+  &__card--storage { @include deferred-image-layer($image-service-storage); }
+  &__copy { position: relative; width: 100%; padding: 40px; color: $color-white; background: linear-gradient($color-transparent, $color-overlay); }
+  &__copy > span { font-size: 12px; font-weight: 700; }
+  h3 { color: $color-white; margin: 4px 0 10px; }
+  &__copy p { font-size: 13px; line-height: 1.5; }
+}

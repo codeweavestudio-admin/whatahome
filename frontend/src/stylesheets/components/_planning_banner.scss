@@ -1,0 +1,7 @@
+.planning_banner {
+  background: $color-banner;
+  h2 { max-width: 1000px; font-weight: 500; }
+  h2 span { display: block; color: $color-primary; }
+  &:has(+ .testimonials) h2 { max-width: 796px; }
+}
+

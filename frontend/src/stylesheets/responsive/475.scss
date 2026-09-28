@@ -1,0 +1,41 @@
+@media (max-width: $breakpoint-mobile) {
+  .hero_section__image::before { background-image: $image-hero-mobile; }
+  .our_work__project--kitchen { --background-image: #{$image-project-kitchen-mobile}; }
+  .our_work__project--flex { --background-image: #{$image-project-flex-mobile}; }
+  .our_work__project--interior { --background-image: #{$image-project-interior-mobile}; }
+  .hero_section { --hero-enter-distance: #{$hero-mobile-distance}; --hero-image-scale: #{$hero-mobile-scale}; }
+  .floating_whatsapp { right: max(16px, env(safe-area-inset-right)); bottom: max(16px, env(safe-area-inset-bottom)); width: 56px; height: 56px; }
+  .section-heading h2, .planning_banner h2 { font-size: 36px; }
+  .section-heading .eyebrow { font-size: 13px; }
+  .planning_banner__break { display: none; }
+  .consultation_services__card { flex-basis: 90%; min-height: 480px; }
+  .consultation_services h3 { font-size: 28px; }
+  .consultation_services__copy { padding: 24px; }
+  .our_work__grid { grid-template-columns: 1fr; }
+  .our_work__filters { gap: 4px; }
+  .our_work__filters button { padding: 10px 12px; }
+  .our_work__partners { margin-top: 40px; }
+  .our_work__partner-row h3 { font-size: 28px; }
+  .how_we_solve h3 { font-size: 26px; }
+  .how_we_solve__case { padding: 20px; }
+  .how_we_solve__answer { grid-template-columns: 1fr; }
+  .how_we_solve__answer, .testimonials blockquote { font-size: 14px; }
+  .contact_cta__content { padding: 40px 20px; }
+  .contact_cta h2 { font-size: 32px; }
+  .footer { padding-block: 32px; }
+  .header__cta { display: none; }
+  .section { padding-block: 32px; }
+  .hero_section h1 { font-size: 40px; }
+  .hero_section .eyebrow { font-size: 13px; }
+  .hero_section .actions { flex-direction: column; }
+  .hero_section__marker { font-size: 7px; line-height: 10px; padding: 6px; gap: 5px; }
+  .hero_section__marker::before { width: 7px; height: 7px; }
+  .hero_section__marker--electrical { left: 3%; }
+  .hero_section__marker--utility { right: 5%; }
+  .hero_section__benefits { justify-content: flex-start; gap: 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: 0s !important; animation-duration: 0s !important; }
+}

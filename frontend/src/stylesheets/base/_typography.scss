@@ -1,0 +1,6 @@
+body { font-family: $font-primary; font-size: 16px; line-height: 1.5; color: $color-text; }
+h1, h2, h3, h4 { font-family: $font-heading; line-height: 1.2; color: $color-black; }
+h1, h2 { font-size: 64px; font-weight: 700; }
+h3 { font-size: 36px; }
+strong { font-weight: 700; }
+.text-primary { color: $color-primary; }

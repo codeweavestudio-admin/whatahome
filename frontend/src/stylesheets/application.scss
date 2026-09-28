@@ -1,0 +1,20 @@
+// Compile this entry only. Import order makes globals available without namespaces.
+@import 'common';
+@import 'base/reset';
+@import 'base/typography';
+@import 'base/global';
+@import 'components/header';
+@import 'components/hero_section';
+@import 'components/consultation_services';
+@import 'components/planning_banner';
+@import 'components/our_work';
+@import 'components/how_we_solve';
+@import 'components/testimonials';
+@import 'components/contact_cta';
+@import 'components/footer';
+@import 'components/floating_whatsapp';
+@import 'pages/home';
+@import 'base/animations';
+@import 'responsive/1024';
+@import 'responsive/768';
+@import 'responsive/475';

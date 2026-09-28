@@ -1,0 +1,27 @@
+// Change family names AND their @font-face source here to switch fonts site-wide.
+$font-primary: 'Inter', sans-serif;
+$font-heading: $font-primary;
+$font-brand: 'Geologica', sans-serif;
+$font-filter: 'Roboto', sans-serif;
+
+@font-face {
+  font-family: 'Inter';
+  src: url('@fontsource-variable/inter/files/inter-latin-wght-normal.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Geologica';
+  src: url('@fontsource-variable/geologica/files/geologica-latin-wght-normal.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: url('@fontsource-variable/roboto/files/roboto-latin-wght-normal.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}

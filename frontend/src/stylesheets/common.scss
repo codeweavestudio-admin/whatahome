@@ -1,0 +1,4 @@
+// Shared globals, imported FIRST by application.scss (Rails-style Sass imports).
+@import 'abstracts/variables';
+@import 'abstracts/fonts';
+@import 'abstracts/mixins';

@@ -1,0 +1,14 @@
+.how_we_solve {
+  h2 > span { color: $color-black; }
+  &__layout { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 40px; align-items: start; }
+  &__plan { aspect-ratio: 600 / 800; @include deferred-image-layer($image-floor-plan,118% 109%,center); }
+  &__cases { display: grid; gap: 32px; }
+  &__case { border: 1px solid $color-primary; border-radius: 16px; padding: 32px; box-shadow: 0 1px 2px $color-shadow; }
+  &__case[open] { background: $color-case; }
+  summary { cursor: pointer; list-style: none; &::-webkit-details-marker { display: none; } }
+  &__meta { display: flex; justify-content: space-between; gap: 12px; font-size: 12px; margin-bottom: 16px; color: $color-black; span:first-child { color: $color-primary; font-weight: 700; } }
+  &__answer { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; border-top: 2px solid $color-border; margin-top: 16px; padding-top: 16px; }
+  &__answer h4 { color: $color-primary; font-size: 16px; font-weight: 400; margin-bottom: 10px; }
+  &__answer strong { display: block; margin-top: 20px; }
+}
+
