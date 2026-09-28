@@ -14,8 +14,17 @@
   .action:hover, .action:focus-visible { transform: translateY(-2px); }
   .action:hover::after, .action:focus-visible::after { transform: translate(2px, -2px) scaleX(-1); }
   &__home-icon { @include icon($icon-home, 14.667px, 14px); }
-  &__scene { aspect-ratio: 4 / 3; }
-  &__image { position: absolute; inset: 0; @include image-layer($image-hero); }
+  &__scene {   position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden; }
+ &__image {
+  position: absolute;
+  inset: 0;
+  background-image: $image-hero;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
   &__marker { position: absolute; display: flex; align-items: center; gap: 12px; padding: 10px; border-radius: 50px; font-size: 10px; font-weight: 700; line-height: 12px; background: $color-badge; color: $color-dark-green; white-space: nowrap; }
   &__marker::before { content: ''; flex-shrink: 0; width: 10px; height: 10px; background: $icon-marker center / contain no-repeat; }
   &__marker--electrical { left: 5.97%; top: 85.59%; }
@@ -38,7 +47,9 @@
   &__content > p:last-of-type { animation-delay: $hero-heading-gap * 3 + $motion-stagger; }
   &__content > .actions { animation-delay: $hero-heading-gap * 3 + $motion-stagger * 2; }
   &__scene.reveal { transform: none; transition: opacity $hero-enter-duration $motion-ease; }
-  &__scene.is-visible &__image::before { animation: hero-image-settle $hero-image-duration $motion-ease backwards; }
+ &__scene.is-visible &__image {
+  animation: hero-image-settle $hero-image-duration $motion-ease backwards;
+}
   &__scene.is-visible &__marker { animation: hero-enter $hero-enter-duration $motion-ease backwards; }
   @for $index from 1 through 5 {
     &__scene.is-visible &__marker:nth-child(#{$index}) { animation-delay: $hero-tag-delay + ($index - 1) * $hero-tag-stagger; }

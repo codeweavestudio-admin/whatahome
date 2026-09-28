@@ -29,7 +29,7 @@ export default function Header() {
         <a href="/" className="header__logo" aria-label="Whatahome — home" />
         <button ref={toggle} className="header__toggle" type="button" aria-expanded={isOpen}
           aria-controls="primary-navigation" aria-label={isOpen ? 'Close navigation' : 'Open navigation'}
-          onClick={() => setIsOpen(!isOpen)}>{isOpen ? 'Close' : 'Menu'}</button>
+          onClick={() => setIsOpen(!isOpen)} />
         <nav id="primary-navigation" aria-label="Main navigation" className={`header__nav${isOpen ? ' is-open' : ''}`}>
           {navigation.map(({ label, href, active }) => (
             <a key={label} href={href} aria-current={active ? 'page' : undefined}

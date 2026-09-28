@@ -26,6 +26,12 @@
   &.is-visible::before {
     background-image: var(--background-image);
   }
+
+  @media (prefers-reduced-motion: reduce) {
+    &::before {
+      background-image: var(--background-image);
+    }
+  }
 }
 @mixin icon($image, $width: 24px, $height: $width) {
   display: inline-block;

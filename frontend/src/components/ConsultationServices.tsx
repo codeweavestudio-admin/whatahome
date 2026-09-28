@@ -17,6 +17,8 @@ export default function ConsultationServices() {
         <p>A home is not finished when the interiors are installed. It evolves with your lifestyle. Our consultation helps you prepare for what comes next.</p>
       </div>
       <div className="consultation_services__carousel" role="region" aria-roledescription="carousel" aria-label="Home consultation services"
+        onMouseEnter={() => setInteracting(true)}
+        onMouseLeave={() => setInteracting(false)}
         onFocusCapture={event => setFocused(event.target.matches(':focus-visible'))} onBlurCapture={event => { if (!event.currentTarget.contains(event.relatedTarget)) setFocused(false) }}>
         <div className="consultation_services__viewport" ref={viewport} tabIndex={0} aria-label="Service cards. Use arrow keys to browse, or Space to pause or resume automatic slides."
           onKeyDown={event => { if (event.key === ' ') { event.preventDefault(); setPaused(!paused) } if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') { event.preventDefault(); navigate(event.key === 'ArrowRight' ? 1 : -1) } }}

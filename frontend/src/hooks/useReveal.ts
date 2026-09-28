@@ -1,8 +1,7 @@
 import { useEffect } from 'react'
 import { useReducedMotion } from './useReducedMotion'
 
-const selectors = '.hero_section__scene, .hero_section__benefits, .section-heading > *, .consultation_services__carousel, .planning_banner h2, .our_work__project, .our_work__partners, .how_we_solve__plan, .how_we_solve__case, .testimonials figure, .testimonials__steps, .contact_cta__content, .footer__grid > *'
-
+const selectors = '.hero_section__scene, .hero_section__benefits, .section-heading > *, .consultation_services__carousel, .planning_banner h2, .our_work__project, .our_work__partners, .how_we_solve__plan, .how_we_solve__case, .testimonials figure, .testimonials__steps, .contact_cta, .footer__grid > *'
 export function useReveal() {
   const reducedMotion = useReducedMotion()
   useEffect(() => {

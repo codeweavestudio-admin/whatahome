@@ -24,21 +24,47 @@ export function useCarousel(count: number) {
   const move = useCallback((direction: number) => {
     const el = track.current
     if (!el || animation.current) return
-    const start = (count + position.current) * stepSize()
-    const next = (position.current + direction + count) % count
+
+    const step = stepSize()
+    if (!step) return
+
+    const currentX = (count + position.current) * step
+    const targetX = currentX + (direction * step)
+
     const style = getComputedStyle(el)
-    const duration = reducedMotion ? 0 : parseFloat(style.getPropertyValue('--carousel-duration'))
-    const motion = el.animate([
-      { transform: `translateX(-${start}px)` },
-      { transform: `translateX(-${start + direction * stepSize()}px)` },
-    ], { duration, easing: style.getPropertyValue('--motion-ease').trim(), fill: 'forwards' })
+    const duration = reducedMotion
+      ? 0
+      : parseFloat(style.getPropertyValue('--carousel-duration')) || 600
+
+    const motion = el.animate(
+      [
+        { transform: `translateX(-${currentX}px)` },
+        { transform: `translateX(-${targetX}px)` },
+      ],
+      {
+        duration,
+        easing: style.getPropertyValue('--motion-ease').trim() || 'ease',
+        fill: 'forwards',
+      }
+    )
+
     animation.current = motion
+
     motion.finished.then(() => {
-      position.current = next
+      position.current += direction
+
+      if (position.current >= count) {
+        position.current = 0
+      } else if (position.current < 0) {
+        position.current = count - 1
+      }
+
+      animation.current = null
       place()
       motion.cancel()
+    }).catch(() => {
       animation.current = null
-    }).catch(() => { /* Resize or unmount cancels an in-flight transition. */ })
+    })
   }, [count, place, reducedMotion, stepSize])
   useEffect(() => {
     const el = viewport.current
@@ -66,7 +92,9 @@ export function useCarousel(count: number) {
   useEffect(() => {
     if (!playing || !track.current) return
     const delay = parseFloat(getComputedStyle(track.current).getPropertyValue('--carousel-delay'))
-    const timer = window.setInterval(() => move(1), delay)
+    const timer = window.setInterval(() => {
+      move(1)
+    }, delay)
     return () => window.clearInterval(timer)
   }, [playing, move, interaction])
   useEffect(() => {
