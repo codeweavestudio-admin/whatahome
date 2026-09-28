@@ -91,10 +91,9 @@ export function useCarousel(count: number) {
   const playing = !paused && !interacting && !focused && visible && !hidden && !reducedMotion
   useEffect(() => {
     if (!playing || !track.current) return
-    const delay = parseFloat(getComputedStyle(track.current).getPropertyValue('--carousel-delay'))
     const timer = window.setInterval(() => {
       move(1)
-    }, delay)
+    }, 4000)
     return () => window.clearInterval(timer)
   }, [playing, move, interaction])
   useEffect(() => {
@@ -110,3 +109,5 @@ export function useCarousel(count: number) {
   }
   return { viewport, track, paused, setPaused, setInteracting, setFocused, reducedMotion, navigate }
 }
+
+

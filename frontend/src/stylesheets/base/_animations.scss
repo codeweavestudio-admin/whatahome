@@ -22,8 +22,6 @@
   transition: background-color $motion-hover ease, color $motion-hover ease, opacity $motion-hover ease, box-shadow $motion-hover ease;
 }
 .header__nav.is-open { animation: soft-enter $motion-hover $motion-ease; }
-.our_work__dialog[open] { animation: soft-enter $motion-reveal $motion-ease; }
-.our_work__dialog[open]::backdrop { animation: soft-fade $motion-hover ease; }
 @keyframes soft-enter { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes soft-fade { from { opacity: 0; } to { opacity: 1; } }
 @media (prefers-reduced-motion: reduce) {
