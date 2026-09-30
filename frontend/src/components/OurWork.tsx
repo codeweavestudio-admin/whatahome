@@ -19,7 +19,9 @@ export default function OurWork() {
       <div className="our_work__grid" key={filter}>{shown.map(project => <button type="button" key={project.id} className={`our_work__project our_work__project--${project.id}`} aria-label={project.title}>
         <span className="our_work__caption"><span className="our_work__category">{project.category}</span><span className="our_work__title">{project.title}<span className="our_work__arrow" aria-hidden="true" /></span></span>
       </button>)}</div>
-      <div className="our_work__partners"><span className="eyebrow">Collaboration</span><div className="our_work__partner-row"><h3>Trusted by homeowners &amp; businesses</h3><div className="our_work__logos" aria-label="Sample partner logos">{[1,2,3,4].map(i => <span key={i} className="our_work__logo" role="img" aria-label="Logoipsum sample logo" />)}</div></div></div>
+      {/* <div className="our_work__partners"><span className="eyebrow">Collaboration</span><div className="our_work__partner-row"><h3>Trusted by homeowners &amp; businesses</h3>
+      <div className="our_work__logos" aria-label="Sample partner logos">{[1,2,3,4].map(i => <span key={i} className="our_work__logo" role="img" aria-label="Logoipsum sample logo" />)}</div>
+      </div></div> */}
     </div>
   </section>
 }

@@ -21,6 +21,8 @@
   .footer__grid { grid-template-columns: 1fr; gap: 24px; }
   .container { width: calc(100% - 40px); }
   .header__toggle { display: inline-flex; margin-left: auto; }
+  .header__cta--desktop { display: none; }
+  .header__cta--mobile { display: inline-flex; }
   .header__nav { display: none; position: absolute; inset: calc(100% + 16px) 0 auto; z-index: 10; padding: 16px; border: 1px solid $color-border; border-radius: 12px; background: $color-cream; box-shadow: 0 8px 20px $color-shadow; }
   .header__nav.is-open { display: flex; flex-direction: column; align-items: stretch; }
   .header__nav a { padding: 10px 12px; }

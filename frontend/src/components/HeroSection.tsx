@@ -1,3 +1,5 @@
+import { consultationWhatsAppUrl } from '../config/contact'
+
 const markers = [
   ['electrical', 'Additional Electrical Point'],
   ['smart', 'Smart Home Ready'],
@@ -16,7 +18,7 @@ export default function HeroSection() {
           <p>Smart civil and interior consultations designed around the way you live today—and the way your home may evolve tomorrow.</p>
           <p>From appliance-ready plumbing and electrical points to smarter layouts, storage, lighting and future upgrades, we help you decide before construction begins.</p>
           <div className="actions">
-            <a className="action" href="/consultation">Plan My Home</a>
+            <a className="action" href={consultationWhatsAppUrl} target="_blank" rel="noopener noreferrer">Plan My Home</a>
             <a className="action action--secondary" href="/#consultation">Explore Our Services</a>
           </div>
         </div>

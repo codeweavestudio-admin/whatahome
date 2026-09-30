@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
+import { consultationWhatsAppUrl } from '../config/contact'
+
 
 const navigation = [
   { label: 'Home', href: '/', active: true },
@@ -27,16 +29,24 @@ export default function Header() {
     <header className="header">
       <div className="container header__inner">
         <a href="/" className="header__logo" aria-label="Whatahome — home" />
-        <button ref={toggle} className="header__toggle" type="button" aria-expanded={isOpen}
-          aria-controls="primary-navigation" aria-label={isOpen ? 'Close navigation' : 'Open navigation'}
-          onClick={() => setIsOpen(!isOpen)} />
+        <button
+          ref={toggle}
+          className="header__toggle"
+          type="button"
+          aria-expanded={isOpen}
+          aria-controls="primary-navigation"
+          aria-label={isOpen ? 'Close navigation' : 'Open navigation'}
+          onClick={() => setIsOpen(!isOpen)}
+        />
         <nav id="primary-navigation" aria-label="Main navigation" className={`header__nav${isOpen ? ' is-open' : ''}`}>
           {navigation.map(({ label, href, active }) => (
             <a key={label} href={href} aria-current={active ? 'page' : undefined}
               onClick={() => setIsOpen(false)}>{label}</a>
           ))}
+          <a href={consultationWhatsAppUrl} target="_blank" rel="noopener noreferrer" className="action header__cta header__cta--mobile"
+            onClick={() => setIsOpen(false)}>Book a Consultation</a>
         </nav>
-        <a href="/consultation" className="action header__cta">Book a Consultation</a>
+        <a href={consultationWhatsAppUrl} target="_blank" rel="noopener noreferrer" className="action header__cta header__cta--desktop">Book a Consultation</a>
       </div>
     </header>
   )

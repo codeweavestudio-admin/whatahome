@@ -10,24 +10,16 @@
   &__nav a[aria-current]:hover { color: $color-white; }
   &__cta { font-size: 16px; padding: 8px 20px; min-height: 36px; line-height: 20px; gap: 8px; background: $color-primary-alt; box-shadow: 0 1px 1px $color-shadow; }
   &__cta::after { width: 20px; height: 20px; background-image: $icon-arrow-small; }
+  &__cta--mobile { display: none; }
+  &__nav .header__cta:hover { color: $color-white; }
   &__toggle {
     display: none;
-    align-items: center;
-    justify-content: center;
-    width: 44px;
-    height: 44px;
-    padding: 10px;
-    border: 0;
-    border-radius: 8px;
-    background: $color-surface;
-    cursor: pointer;
-
-    &::before {
-      content: '';
-      display: block;
-      width: 24px;
-      height: 24px;
-      background: $icon-menu center / contain no-repeat;
-    }
+  &::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 24px;
+    background: $icon-menu center / contain no-repeat;
+  }
   }
 }

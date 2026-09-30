@@ -23,9 +23,8 @@
   .contact_cta__content { padding: 40px 20px; }
   .contact_cta h2 { font-size: 32px; }
   .footer { padding-block: 32px; }
-  .header__cta { display: none; }
   .section { padding-block: 32px; }
-  .hero_section h1 { font-size: 40px; }
+  .hero_section h1 { font-size: 36px; }
   .hero_section .eyebrow { font-size: 13px; }
   .hero_section .actions { flex-direction: column; }
   .hero_section__marker { font-size: 7px; line-height: 10px; padding: 6px; gap: 5px; }
@@ -33,6 +32,9 @@
   .hero_section__marker--electrical { left: 3%; }
   .hero_section__marker--utility { right: 5%; }
   .hero_section__benefits { justify-content: flex-start; gap: 12px; }
+  .action{
+    font-size: 16px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
