@@ -4,9 +4,21 @@ import { useCarousel } from '../hooks/useCarousel'
 const services = [
   {
     image: 'ev',
-    title: 'EV Charging Planning',
+    title: ' Car & Bike EV Charging Planning',
     description:
-      'EV charger readiness planned with the right parking space, electrical capacity, cabling route and future power requirements — so your home is ready when your EV arrives.',
+      'Plan dedicated charging spaces for electric cars and bikes with the right parking layout, electrical capacity, cabling routes and future power requirements — ensuring your home is ready for convenient and efficient EV charging.',
+  },
+   {
+    image: 'purifier',
+    title: ' Under-Sink Water Purifier Planning',
+    description:
+      'Under-Sink Water Purifier Plan the right space, plumbing connections, electrical access and drainage requirements for an under-sink water purifier — ensuring a clean, convenient and clutter-free kitchen with easy access for future maintenance.',
+  },
+  {
+    image: 'baby-swing',
+    title: 'Baby Swing Planning',
+    description:
+      "Baby Swing Readiness Plan the ideal location, ceiling support, structural strength and safe clearance for a baby swing — creating a secure, comfortable space that integrates seamlessly into your home while accommodating your growing family's needs.",
   },
   {
     image: 'utility',
@@ -31,6 +43,9 @@ export default function ConsultationServices() {
     setInteracting,
     setFocused,
     navigate,
+    activeIndex,
+    goTo,
+    reducedMotion,
   } = useCarousel(services.length)
 
   const touch = useRef<{ x: number; y: number } | null>(null)
@@ -43,7 +58,6 @@ export default function ConsultationServices() {
     >
       <div className="container">
         <div className="section-heading">
-          <span className="eyebrow">01 / Consultation</span>
 
           <h2 id="services-title">
             One Home. More Possibilities.
@@ -160,6 +174,34 @@ export default function ConsultationServices() {
                 ))
               )}
             </div>
+          </div>
+          <div className="consultation_services__controls">
+            <div className="consultation_services__dots" role="group" aria-label="Choose a service slide">
+              {services.map((service, index) => (
+                <button
+                  key={service.image}
+                  type="button"
+                  className="consultation_services__dot"
+                  aria-label={`Show slide ${index + 1}: ${service.title}`}
+                  aria-current={activeIndex === index ? 'true' : undefined}
+                  onClick={() => goTo(index)}
+                >
+                  <span aria-hidden="true" />
+                </button>
+              ))}
+            </div>
+            {!reducedMotion && (
+              <button
+                type="button"
+                className="consultation_services__playback"
+                aria-label={paused ? 'Resume automatic slides' : 'Pause automatic slides'}
+                onClick={() => setPaused(value => !value)}
+              >
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+                  {paused ? <path d="M7 4v16l13-8z" /> : <path d="M6 4h4v16H6zm8 0h4v16h-4z" />}
+                </svg>
+              </button>
+            )}
           </div>
         </div>
       </div>

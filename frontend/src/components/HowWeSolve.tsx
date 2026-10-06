@@ -8,7 +8,10 @@ const cases = [
 export default function HowWeSolve() {
   const toggleDetails = useAnimatedDetails()
   return <section className="how_we_solve section" id="how-we-solve" aria-labelledby="solve-title"><div className="container">
-    <div className="section-heading"><span className="eyebrow">03 / How We Solve</span><h2 id="solve-title"><span>Build your home today.</span> Plan it for tomorrow.</h2><p>The most expensive home decisions are often the small ones discovered too late. We make those decisions visible while they are still easy to solve.</p></div>
+    <div className="section-heading">
+      {/* <span className="eyebrow">03 / How We Solve</span> */}
+    {/* <h1 id="hero-title"><span className="hero_section__title-line">Small Decisions Today.</span><span className="hero_section__title-line hero_section__title-line--accent">Big Savings Tomorrow.</span></h1> */}
+      <h2 id="solve-title"><span>Small Decisions Today.</span>Big Savings Tomorrow.</h2><p>The most expensive home decisions are often the small ones discovered too late. We make those decisions visible while they are still easy to solve.</p></div>
     <div className="how_we_solve__layout">
       <div className="how_we_solve__plan photo" role="img" aria-label="A floor plan showing provisions for a work area and charging, with the impact: less rework, more flexibility." />
       <div className="how_we_solve__cases">{cases.map((item,index) => <details className="how_we_solve__case" key={item.title} open={index === 2}>

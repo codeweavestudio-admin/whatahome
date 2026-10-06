@@ -6,11 +6,11 @@
   &__filters button[aria-pressed='true'] { background: $color-white; color: $color-primary; }
   &__grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 40px; }
   &__project { border: 0; padding: 0; position: relative; aspect-ratio: 4 / 3; border-radius: 16px; overflow: hidden; text-align: left; background: $color-surface; color: $color-white; }
-  &__project--kitchen { @include deferred-image-layer($image-project-kitchen); }
+  &__project[class*='our_work__project--kitchen-'] { @include deferred-image-layer($image-project-kitchen); }
   &__project--gate { @include deferred-image-layer($image-project-gate); }
   &__project--utility { @include deferred-image-layer($image-project-utility); }
-  &__project--flex { @include deferred-image-layer($image-project-flex); }
-  &__project--interior { @include deferred-image-layer($image-project-interior); }
+  &__project--bedroom { @include deferred-image-layer($image-project-bedroom); }
+  &__project[class*='our_work__project--living-area-'] { @include deferred-image-layer($image-project-living-area); }
   &__grid > &__project:first-child { grid-column: 1 / -1; }
   &__project::before { transition: transform $motion-hover $motion-ease; }
   &__project:hover::before { transform: scale(1.025); }

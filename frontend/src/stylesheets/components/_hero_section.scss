@@ -4,7 +4,7 @@
   --hero-image-scale: #{$hero-image-scale};
   &__layout { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; align-items: start; }
   &__content { display: flex; flex-direction: column; align-items: flex-start; gap: 20px; }
-  h1 { width: 100%; line-height: normal; }
+  h1 { width: 100%; font-size: 54px; line-height: normal; }
   &__title-line { display: block; }
   &__title-line--accent { color: $color-primary-alt; margin-top: 20px; }
   &__content > p { line-height: normal; }

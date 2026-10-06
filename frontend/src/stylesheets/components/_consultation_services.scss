@@ -1,4 +1,57 @@
 .consultation_services {
+  &__controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 28px;
+  }
+
+  &__dots {
+    display: flex;
+    align-items: center;
+    padding-inline: 10px;
+    border-radius: 999px;
+    background: $color-surface;
+  }
+
+  &__dot, &__playback {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 44px;
+    border: 0;
+    cursor: pointer;
+    color: $color-primary;
+    border-radius: 999px;
+  }
+
+  &__dot {
+    width: 44px;
+    padding: 0;
+    background: transparent;
+
+    span {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: currentColor;
+      opacity: .35;
+      transition: width 300ms ease, opacity 300ms ease;
+    }
+
+    &[aria-current='true'] span {
+      width: 28px;
+      opacity: 1;
+    }
+  }
+
+  &__playback {
+    width: 44px;
+    padding: 0;
+    background: $color-surface;
+  }
+
   &__viewport {
     overflow: hidden;
     touch-action: pan-y;
@@ -6,6 +59,7 @@
   }
 
   &__track {
+    --carousel-ease: cubic-bezier(0.45, 0, 0.2, 1);
     display: flex;
     gap: 40px;
     will-change: transform;
@@ -41,6 +95,14 @@
 
   &__card--storage {
     background-image: $image-service-storage;
+  }
+
+  &__card--purifier {
+    background-image: $image-service-purifier;
+  }
+
+  &__card--baby-swing {
+    background-image: $image-service-baby-swing;
   }
 
   &__copy {

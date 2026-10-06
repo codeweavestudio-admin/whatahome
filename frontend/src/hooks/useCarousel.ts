@@ -6,6 +6,7 @@ export function useCarousel(count: number) {
   const viewport = useRef<HTMLDivElement>(null)
   const track = useRef<HTMLDivElement>(null)
   const position = useRef(0)
+  const [activeIndex, setActiveIndex] = useState(0)
   const animation = useRef<Animation | null>(null)
   const [paused, setPaused] = useState(false)
   const [interacting, setInteracting] = useState(false)
@@ -23,7 +24,7 @@ export function useCarousel(count: number) {
   }, [count, stepSize])
   const move = useCallback((direction: number) => {
     const el = track.current
-    if (!el || animation.current) return
+    if (!el || animation.current || direction === 0) return
 
     const step = stepSize()
     if (!step) return
@@ -34,7 +35,7 @@ export function useCarousel(count: number) {
     const style = getComputedStyle(el)
     const duration = reducedMotion
       ? 0
-      : parseFloat(style.getPropertyValue('--carousel-duration')) || 600
+      : parseFloat(style.getPropertyValue('--carousel-duration')) || 850
 
     const motion = el.animate(
       [
@@ -43,7 +44,7 @@ export function useCarousel(count: number) {
       ],
       {
         duration,
-        easing: style.getPropertyValue('--motion-ease').trim() || 'ease',
+        easing: style.getPropertyValue('--carousel-ease').trim() || 'cubic-bezier(0.45, 0, 0.2, 1)',
         fill: 'forwards',
       }
     )
@@ -60,6 +61,7 @@ export function useCarousel(count: number) {
       }
 
       animation.current = null
+      setActiveIndex(position.current)
       place()
       motion.cancel()
     }).catch(() => {
@@ -107,7 +109,10 @@ export function useCarousel(count: number) {
     setInteraction(value => value + 1)
     move(direction)
   }
-  return { viewport, track, paused, setPaused, setInteracting, setFocused, reducedMotion, navigate }
+  const goTo = (index: number) => {
+    if (index >= 0 && index < count) navigate(index - position.current)
+  }
+  return { viewport, track, paused, setPaused, setInteracting, setFocused, reducedMotion, navigate, activeIndex, goTo }
 }
 
 

@@ -4,7 +4,7 @@ body { min-width: 320px; background: $color-background; }
 section[id] { scroll-margin-top: 24px; }
 .container { width: calc(100% - 160px); max-width: $content-width; margin-inline: auto; }
 .section { padding-block: $section-space; }
-.section-heading { display: grid; grid-template-columns: auto 1fr 1fr; gap: 20px; align-items: start; margin-bottom: $section-gap; }
+.section-heading { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start; margin-bottom: $section-gap; }
 .section-heading h2 { color: $color-primary; }
 .section-heading > p { align-self: end; }
 .eyebrow { display: inline-flex; align-items: center; gap: 8px; width: fit-content; padding: 6px 12px; border-radius: 999px; background: $color-surface; color: $color-primary; line-height: 1.2; font-size: 16px; white-space: nowrap; }

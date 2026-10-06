@@ -1,8 +1,8 @@
 @media (max-width: $breakpoint-mobile) {
   .hero_section__image::before { background-image: $image-hero-mobile; }
   .our_work__project--kitchen { --background-image: #{$image-project-kitchen-mobile}; }
-  .our_work__project--flex { --background-image: #{$image-project-flex-mobile}; }
-  .our_work__project--interior { --background-image: #{$image-project-interior-mobile}; }
+  .our_work__project--bedroom { --background-image: #{$image-project-bedroom-mobile}; }
+  .our_work__project--living-area { --background-image: #{$image-project-living-area-mobile}; }
   .hero_section { --hero-enter-distance: #{$hero-mobile-distance}; --hero-image-scale: #{$hero-mobile-scale}; }
   .floating_whatsapp { right: max(16px, env(safe-area-inset-right)); bottom: max(16px, env(safe-area-inset-bottom)); width: 56px; height: 56px; }
   .section-heading h2, .planning_banner h2 { font-size: 36px; }
