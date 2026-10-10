@@ -10,6 +10,7 @@ export default function FloatingWhatsApp({ phoneNumber, message }: FloatingWhats
   return (
     <a className="floating_whatsapp" href={url} target="_blank" rel="noopener noreferrer"
       aria-label="Chat with Whatahome on WhatsApp (opens in a new tab)" title="Chat with us on WhatsApp">
+      <span className="floating_whatsapp__label" aria-hidden="true">Enquiry</span>
       <span className="floating_whatsapp__icon" aria-hidden="true" />
     </a>
   )
