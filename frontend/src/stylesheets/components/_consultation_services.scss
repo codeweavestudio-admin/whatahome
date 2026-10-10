@@ -1,4 +1,12 @@
 .consultation_services {
+  p {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    overflow: hidden;
+  }
+
   &__controls {
     display: flex;
     justify-content: center;
@@ -85,8 +93,9 @@
 
   &__card--ev {
     background-image: $image-service-ev;
-    background-size: auto 111%;
-    background-position: calc(50% + 40px) center;
+    // Focus the crop on the vehicles and charger, above the card copy.
+    background-size: auto 120%;
+    background-position: 85% 180%;
   }
 
   &__card--utility {

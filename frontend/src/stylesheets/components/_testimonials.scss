@@ -3,7 +3,7 @@
   figure { padding: 32px; border: 1px solid $color-primary; border-radius: 16px; box-shadow: 0 1px 2px $color-shadow; }
   figcaption { font-size: 12px; color: $color-primary; margin-bottom: 16px; }
   blockquote { color: $color-black; }
-  &__steps { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); margin: 73px 0 0; padding: 0; list-style: none; text-align: center; }
+  &__steps { display: grid; grid-template-columns: repeat(6,minmax(0,1fr)); margin: 73px 0 0; padding: 0; list-style: none; text-align: center; }
   &__steps li { padding: 32px; border-right: 1px solid $color-primary; &:last-child { border: 0; } }
   &__steps strong { display: block; font-size: 32px; color: $color-primary; line-height: 1.2; }
   &__steps span { font-size: 12px; color: $color-black; }

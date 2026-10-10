@@ -1,4 +1,4 @@
-html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+html { --header-height: 76px; scroll-behavior: smooth; scroll-padding-top: var(--header-height); }
 body { min-width: 320px; background: $color-background; }
 :focus-visible { outline: 3px solid $color-focus; outline-offset: 4px; }
 section[id] { scroll-margin-top: 24px; }

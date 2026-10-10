@@ -1,6 +1,11 @@
 .header {
   padding-block: 20px;
   background: $color-cream;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
   &__inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; position: relative; }
   &__logo { @include icon($image-logo, 93.458px, 25px); }
   &__nav { display: flex; align-items: center; gap: 20px; line-height: normal; }
@@ -23,3 +28,5 @@
   }
   }
 }
+
+.header + main { padding-top: var(--header-height); }

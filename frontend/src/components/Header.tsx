@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { consultationWhatsAppUrl } from '../config/contact'
 
 
@@ -12,7 +12,23 @@ const navigation = [
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
+  const header = useRef<HTMLElement>(null)
   const toggle = useRef<HTMLButtonElement>(null)
+  useLayoutEffect(() => {
+    const element = header.current
+    if (!element) return
+
+    const updateHeight = () => {
+      document.documentElement.style.setProperty('--header-height', `${element.getBoundingClientRect().height}px`)
+    }
+    updateHeight()
+    const observer = new ResizeObserver(updateHeight)
+    observer.observe(element)
+    return () => {
+      observer.disconnect()
+      document.documentElement.style.removeProperty('--header-height')
+    }
+  }, [])
   useEffect(() => {
     if (!isOpen) return
     function closeOnEscape(event: KeyboardEvent) {
@@ -26,7 +42,7 @@ export default function Header() {
   }, [isOpen])
 
   return (
-    <header className="header">
+    <header ref={header} className="header">
       <div className="container header__inner">
         <a href="/" className="header__logo" aria-label="Whatahome — home" />
         <button

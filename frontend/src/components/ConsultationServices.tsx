@@ -6,31 +6,31 @@ const services = [
     image: 'ev',
     title: ' Car & Bike EV Charging Planning',
     description:
-      'Plan dedicated charging spaces for electric cars and bikes with the right parking layout, electrical capacity, cabling routes and future power requirements — ensuring your home is ready for convenient and efficient EV charging.',
+      'Plan parking, power and cabling for convenient car and bike EV charging.',
   },
    {
     image: 'purifier',
     title: ' Under-Sink Water Purifier Planning',
     description:
-      'Under-Sink Water Purifier Plan the right space, plumbing connections, electrical access and drainage requirements for an under-sink water purifier — ensuring a clean, convenient and clutter-free kitchen with easy access for future maintenance.',
+      'Plan space, plumbing and power for a tidy under-sink purifier with easy maintenance access.',
   },
   {
     image: 'baby-swing',
     title: 'Baby Swing Planning',
     description:
-      "Baby Swing Readiness Plan the ideal location, ceiling support, structural strength and safe clearance for a baby swing — creating a secure, comfortable space that integrates seamlessly into your home while accommodating your growing family's needs.",
+      'Plan a safe swing location with strong ceiling support and enough clearance.',
   },
   {
     image: 'utility',
     title: 'Electrical & Plumbing Planning',
     description:
-      'Additional electrical points, plumbing connections and utility provisions—decided before walls and finishes are completed.',
+      'Plan power points, plumbing and utilities before walls and finishes are complete.',
   },
   {
     image: 'storage',
     title: 'Space & Storage Planning',
     description:
-      'Unused corners become smarter storage, practical utility areas and functional zones that make daily life feel effortless.',
+      'Turn unused corners into smart storage and practical spaces for everyday living.',
   },
 ]
 
@@ -64,9 +64,7 @@ export default function ConsultationServices() {
           </h2>
 
           <p>
-            A home is not finished when the interiors are installed.
-            It evolves with your lifestyle. Our consultation helps you
-            prepare for what comes next.
+            Plan a home that fits your life today and adapts to tomorrow.
           </p>
         </div>
 
