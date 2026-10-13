@@ -3,7 +3,7 @@ export const contact = {
   whatsapp: {
     countryCode: '91',
     // Full national mobile number, without the country code.
-    phoneNumber: '9566999793',
+    phoneNumber: '7904442782',
     message: 'Welcome to Whatahome. What service do you need?',
   },
 }

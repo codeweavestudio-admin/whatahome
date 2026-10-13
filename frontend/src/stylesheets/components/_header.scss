@@ -7,7 +7,7 @@
   width: 100%;
   z-index: 100;
   &__inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; position: relative; }
-  &__logo { @include icon($image-logo, 93.458px, 25px); }
+  &__logo { @include icon($image-logo, 149.533px, 40px); }
   &__nav { display: flex; align-items: center; gap: 20px; line-height: normal; }
   &__nav a { border-radius: 8px; white-space: nowrap; padding-block: 6px; }
   &__nav a[aria-current] { background: $color-primary-alt; color: $color-white; padding-inline: 12px; }
