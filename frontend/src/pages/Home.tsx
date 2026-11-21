@@ -17,10 +17,10 @@ export default function Home() {
       <Header />
       <main id="main-content">
         <HeroSection />
+          <HowWeSolve />
         <ConsultationServices />
         <PlanningBanner />
         <OurWork />
-        <HowWeSolve />
         <PlanningBanner future />
         <Testimonials />
         <ContactCta />

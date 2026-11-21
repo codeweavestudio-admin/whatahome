@@ -8,12 +8,6 @@ export function useCarousel(count: number) {
   const position = useRef(0)
   const [activeIndex, setActiveIndex] = useState(0)
   const animation = useRef<Animation | null>(null)
-  const [paused, setPaused] = useState(false)
-  const [interacting, setInteracting] = useState(false)
-  const [focused, setFocused] = useState(false)
-  const [visible, setVisible] = useState(false)
-  const [hidden, setHidden] = useState(document.hidden)
-  const [interaction, setInteraction] = useState(0)
   const reducedMotion = useReducedMotion()
   const stepSize = useCallback(() => {
     const el = track.current
@@ -77,27 +71,13 @@ export function useCarousel(count: number) {
       place()
     })
     resize.observe(el)
-    const observer = new IntersectionObserver(([entry]) => setVisible(entry.isIntersecting && entry.intersectionRatio >= .15), { threshold: .15 })
-    observer.observe(el)
-    const visibility = () => setHidden(document.hidden)
-    document.addEventListener('visibilitychange', visibility)
     place()
     return () => {
       resize.disconnect()
-      observer.disconnect()
-      document.removeEventListener('visibilitychange', visibility)
       animation.current?.cancel()
       animation.current = null
     }
   }, [place])
-  const playing = !paused && !interacting && !focused && visible && !hidden && !reducedMotion
-  useEffect(() => {
-    if (!playing || !track.current) return
-    const timer = window.setInterval(() => {
-      move(1)
-    }, 4000)
-    return () => window.clearInterval(timer)
-  }, [playing, move, interaction])
   useEffect(() => {
     if (reducedMotion) {
       animation.current?.cancel()
@@ -106,13 +86,12 @@ export function useCarousel(count: number) {
     }
   }, [reducedMotion, place])
   const navigate = (direction: number) => {
-    setInteraction(value => value + 1)
     move(direction)
   }
   const goTo = (index: number) => {
     if (index >= 0 && index < count) navigate(index - position.current)
   }
-  return { viewport, track, paused, setPaused, setInteracting, setFocused, reducedMotion, navigate, activeIndex, goTo }
+  return { viewport, track, navigate, activeIndex, goTo }
 }
 
 
